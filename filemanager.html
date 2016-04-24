@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <title>File Manager</title>
+    
+</head>
+<body>
+    This is file manager.l
+	<button id="testFileManager">Test File Manager</button>
+	<script src="lib/jQuery/dist/jquery.js"></script>
+	<script>
+	(function($,filemanagetModule,undefined){
+	
+		var onClickTestFileManager=function(event){
+			event.preventDefault();
+			window.opener.filemanagetcallerModule.set("Selected");
+			window.close();
+		};
+	
+		var init =function(){
+		
+		};
+		
+		var wireEvents = function(){
+			$("#testFileManager").on("click",onClickTestFileManager);
+		};
+		
+		$(function(){
+			wireEvents();
+			init();
+		});
+		
+	}(jQuery,filemanagetModule=window.filemanagetModule||{}));
+	</script>
+</body>
+</html>

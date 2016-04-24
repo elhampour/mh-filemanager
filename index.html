@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <title>File Manager Test</title>
+    
+</head>
+<body>
+    <button id="fileManager">FileManager</button>
+	<button id="getSetted">Get Setted</button>
+	<script src="lib/jQuery/dist/jquery.js"></script>
+	<script>
+	(function($,filemanagetcallerModule,undefined){
+	
+		var setted = "";
+	
+		filemanagetcallerModule.set=function(text){
+			setted = text;
+		};
+	
+		var onClickFileManager=function(event){
+			event.preventDefault();
+			var filemanager = window.open("filemanager.html", "filemanager", "width=500, height=500");
+		};
+		
+		var onClickGetSetted=function(event){
+			event.preventDefault();
+			alert(setted);
+		};
+	
+		var init =function(){
+		
+		};
+		
+		var wireEvents = function(){
+			$("#fileManager").on("click",onClickFileManager);
+			$("#getSetted").on("click",onClickGetSetted);
+		};
+		
+		$(function(){
+			wireEvents();
+			init();
+		});
+		
+	}(jQuery,filemanagetcallerModule=window.filemanagetcallerModule||{}));
+	</script>
+</body>
+</html>
