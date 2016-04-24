@@ -4,37 +4,46 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
+			
+	<link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+	<link href="css/filemanager.css" rel="stylesheet" />
+	
     <title>File Manager</title>
-    
 </head>
 <body>
-    This is file manager.l
-	<button id="testFileManager">Test File Manager</button>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="image/filemanager.png" style="display: inline-block; height: 30px; margin-top: -5px"></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    
+  </div><!-- /.container-fluid -->
+</nav>
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<div class="col-md-12">
+							<input placeholder="enter text ..." name="search" id="search" class="form-control" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row fileManagerList"></div>
+		<nav><ul class="pagination"></ul></nav>
+	</div>
+
 	<script src="lib/jQuery/dist/jquery.js"></script>
-	<script>
-	(function($,filemanagetModule,undefined){
-	
-		var onClickTestFileManager=function(event){
-			event.preventDefault();
-			window.opener.filemanagetcallerModule.set("Selected");
-			window.close();
-		};
-	
-		var init =function(){
-		
-		};
-		
-		var wireEvents = function(){
-			$("#testFileManager").on("click",onClickTestFileManager);
-		};
-		
-		$(function(){
-			wireEvents();
-			init();
-		});
-		
-	}(jQuery,filemanagetModule=window.filemanagetModule||{}));
-	</script>
+	<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="js/fileManagerModule.js"></script>
 </body>
 </html>

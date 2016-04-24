@@ -1,0 +1,24 @@
+{
+  "name": "mh-filemanager",
+  "version": "1.0.0",
+  "description": "This is my filemanager.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elhampour/mh-filemanager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elhampour/mh-filemanager/issues"
+  },
+  "homepage": "https://github.com/elhampour/mh-filemanager#readme"
+}

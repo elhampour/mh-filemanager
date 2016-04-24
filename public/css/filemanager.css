@@ -1,0 +1,84 @@
+/* remove bootstrap padding so images sit right next to each other with no gaps */
+.fileManagerList .col-lg-3, 
+.fileManagerList .col-md-4, 
+.fileManagerList .col-sm-6, 
+.fileManagerList .col-xs-12 {
+     padding-bottom: 16px;
+}
+
+/* general styling for all the hovers */
+
+.fileManagerList .hover {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+}
+
+    .fileManagerList .hover .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+    }
+
+    .fileManagerList .hover img {
+        display: block;
+        position: relative;
+    }
+
+    .fileManagerList .hover h2 {
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        font-size: 17px;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .fileManagerList .hover button.info {
+        display: inline-block;
+        text-decoration: none;
+        padding: 7px 14px;
+        text-transform: uppercase;
+        color: #fff;
+        border: 1px solid #fff;
+        margin: 50px 0 0 0;
+        border-radius: 0px;
+        background-color: transparent;
+    }
+
+        .fileManagerList .hover button.info:hover {
+            box-shadow: 0 0 5px #fff;
+        }
+		
+		/* effect hover 3 */
+
+.fileManagerList .hover1 img {
+    transition: all 0.4s ease-in;
+}
+
+.fileManagerList .hover1 button.info, 
+.fileManagerList .hover1 h2 {
+    transform: scale(0.7);
+    transition: all 0.4s ease-in;
+    opacity: 0;
+}
+
+.fileManagerList .hover1:hover img {
+    filter: grayscale(1) blur(3px);
+    -webkit-filter: grayscale(1) blur(3px);
+    transform: scale(1.2);
+}
+
+.fileManagerList .hover1:hover button.info, 
+.fileManagerList .hover1:hover h2 {
+    opacity: 1;
+    transform: scale(1);
+}
