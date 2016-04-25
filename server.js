@@ -17,7 +17,7 @@ app.get('/list/:pagenumber', function (req, res) {
 	
 	var allItems = [];
 	for(var i=1;i<=17;i++){
-		var srcImage = "/image/image"+i+".jpg";
+		var srcImage = "/image/image.jpg";
 		allItems.push(
 			{
 				"src":srcImage,
