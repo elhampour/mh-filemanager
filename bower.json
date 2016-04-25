@@ -1,5 +1,6 @@
 {
   "name": "mh-filemanager",
+   "version": "1.0.0",
   "homepage": "https://github.com/elhampour/mh-filemanager",
   "authors": [
     "Ehsan Elhampour <ehsan.elhampour@gmail.com>"
