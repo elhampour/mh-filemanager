@@ -8,7 +8,7 @@
 	
 		var onClickFileManager=function(event){
 			event.preventDefault();
-			var filemanager = window.open("filemanager", "filemanager", "fullscreen=yes");
+			var filemanager = window.open("/filemanager", "filemanager", "fullscreen=yes");
 		};
 		
 		var onClickGetSetted=function(event){

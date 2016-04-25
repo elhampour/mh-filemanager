@@ -1,5 +1,7 @@
 (function($,fileManagerModule,undefined){
 		
+	var address	="";
+		
 	var onClickTestFileManager=function(event){
 		event.preventDefault();
 		window.opener.fileManagerCallerModule.set("Selected");
@@ -7,7 +9,7 @@
 	};
 
 	var firstPage =function(){
-		var url="/list/1";
+		var url=address+"/1";
 		return $.ajax({
 			url:url,
 			type:"get",
@@ -16,7 +18,7 @@
 	};
 	
 	var changePage=function(pageNumber){
-		var url="/list/"+pageNumber;
+		var url=address+"/"+pageNumber;
 		return $.ajax({
 			url:url,
 			type:"get",
@@ -43,7 +45,8 @@
 		
 		$.each(items,function(index,item){
 			var itemHtml = "<div class='col-lg-2 col-md-3 col-sm-4 col-xs-12' ><img class='img-responsive' src='"+item.src+"'/><span>"+item.index+"</span></div>";
-			var html= "<div class='col-lg-2 col-md-4 col-sm-6 col-xs-12'><div class='hover hover1'><img class='img-responsive' src='"+item.src+"' alt=''><div class='overlay'><h2>Hover effect 3</h2><button class='info'>Show code</button></div></div></div>";
+			var html= "<div class='col-lg-2 col-md-4 col-sm-6 col-xs-12'><div class='hover hover1'><img class='img-responsive' src='"+item.src+"' alt=''><div class='overlay'>"+
+			"<h2>Hover effect 3</h2><h2>Hover effect 3</h2><h2>Hover effect 3</h2><button class='info'>Select</button></div></div></div>";
 			$(".fileManagerList").append(html);
 		});
 	};
@@ -103,9 +106,16 @@
 		changePage(targetPageNumber).done(afterChangePage);
 	};
 
+	var afterGetConfig=function(response){
+		address=JSON.parse(response)[0].address;
+		firstPage().done(afterFirstPage);
+	};
+	
 	var init =function(){
 		var url ="";
-		firstPage().done(afterFirstPage);
+		$.ajax({
+			url:"public/js/config.js"
+		}).done(afterGetConfig);
 	};
 	
 	var wireEvents = function(){

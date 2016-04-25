@@ -3,7 +3,7 @@ var app = express();
 var fs = require("fs");
 var path = require('path');
 
-app.use(express.static('public'));
+app.use('/public', express.static('public'));
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/fileManageCaller.html'));
@@ -17,11 +17,12 @@ app.get('/list/:pagenumber', function (req, res) {
 	
 	var allItems = [];
 	for(var i=1;i<=17;i++){
-		var srcImage = "/image/image.jpg";
+		var srcImage = "/public/image/image.jpg";
 		allItems.push(
 			{
 				"src":srcImage,
-				"index":i
+				"index":i,
+				"info":[{"item1":"item1"},{"item2":"item2"},{"item3":"item3"},{"item4":"item4"}]
 			}
 		);
 	}
