@@ -44,9 +44,17 @@
 		$(".fileManagerList").html("");
 		
 		$.each(items,function(index,item){
-			var itemHtml = "<div class='col-lg-2 col-md-3 col-sm-4 col-xs-12' ><img class='img-responsive' src='"+item.src+"'/><span>"+item.index+"</span></div>";
-			var html= "<div class='col-lg-2 col-md-4 col-sm-6 col-xs-12'><div class='hover hover1'><img class='img-responsive' src='"+item.src+"' alt=''><div class='overlay'>"+
-			"<h2>Hover effect 3</h2><h2>Hover effect 3</h2><h2>Hover effect 3</h2><button class='info'>Select</button></div></div></div>";
+			var html= "<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>\
+				<div class='hover hover1'>\
+					<img class='img-responsive' src='"+item.src+"' alt=''>\
+					<div class='overlay'>\
+						<span class='info-text'>"+item.info.title+"</span>\
+						</br>\
+						</br>\
+						<button class='btn btn-primary btn-sm' data-id='"+item.id+"'>Select</button>\
+					</div>\
+				</div>\
+			</div>";
 			$(".fileManagerList").append(html);
 		});
 	};

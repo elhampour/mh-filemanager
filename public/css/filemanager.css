@@ -3,7 +3,7 @@
 .fileManagerList .col-md-4, 
 .fileManagerList .col-sm-6, 
 .fileManagerList .col-xs-12 {
-     padding-bottom: 16px;
+    padding-bottom: 16px;
 }
 
 /* general styling for all the hovers */
@@ -25,6 +25,7 @@
         overflow: hidden;
         top: 0;
         left: 0;
+		margin-top: 14px;
     }
 
     .fileManagerList .hover img {
@@ -32,40 +33,20 @@
         position: relative;
     }
 
-    .fileManagerList .hover h2 {
-        text-transform: uppercase;
+    .fileManagerList .hover .info-text {
         color: #fff;
         text-align: center;
         position: relative;
-        font-size: 17px;
-        padding: 10px;
-        background: rgba(0, 0, 0, 0.6);
-    }
-
-    .fileManagerList .hover button.info {
-        display: inline-block;
-        text-decoration: none;
-        padding: 7px 14px;
-        text-transform: uppercase;
-        color: #fff;
-        border: 1px solid #fff;
-        margin: 50px 0 0 0;
-        border-radius: 0px;
-        background-color: transparent;
-    }
-
-        .fileManagerList .hover button.info:hover {
-            box-shadow: 0 0 5px #fff;
-        }
-		
-		/* effect hover 3 */
+		font-size: 21px;
+    }		
+/* effect hover 3 */
 
 .fileManagerList .hover1 img {
     transition: all 0.4s ease-in;
 }
-
-.fileManagerList .hover1 button.info, 
-.fileManagerList .hover1 h2 {
+ 
+ .fileManagerList .hover1 button,
+.fileManagerList .hover1 .info-text {
     transform: scale(0.7);
     transition: all 0.4s ease-in;
     opacity: 0;
@@ -76,9 +57,9 @@
     -webkit-filter: grayscale(1) blur(3px);
     transform: scale(1.2);
 }
-
-.fileManagerList .hover1:hover button.info, 
-.fileManagerList .hover1:hover h2 {
+ 
+.fileManagerList .hover1:hover button,
+.fileManagerList .hover1:hover .info-text {
     opacity: 1;
     transform: scale(1);
 }

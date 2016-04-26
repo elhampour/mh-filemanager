@@ -21,8 +21,8 @@ app.get('/list/:pagenumber', function (req, res) {
 		allItems.push(
 			{
 				"src":srcImage,
-				"index":i,
-				"info":[{"item1":"item1"},{"item2":"item2"},{"item3":"item3"},{"item4":"item4"}]
+				"id":i,
+				"info":{"title":"item"+i,"info1":"info1","info2":"info2"}
 			}
 		);
 	}
